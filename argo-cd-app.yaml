@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wordpress
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc:8080
+    namespace: argocd
+  source:
+    path: wordpress
+    repoURL: https://github.com/Jocasmen94/wordpress-argo.git
+    branch: main
